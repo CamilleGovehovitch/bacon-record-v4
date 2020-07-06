@@ -1,0 +1,24 @@
+{
+  "name": "bacon-record-v4",
+  "version": "1.0.0",
+  "description": "Music Label",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass ./sass/main.scss ./assets/css/main.css",
+    "sass-watch": "sass --no-source-map --watch ./sass/main.scss ./assets/css/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CamilleGovehovitch/bacon-record-v4.git"
+  },
+  "author": "Camille GOVEHOVITCH",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CamilleGovehovitch/bacon-record-v4/issues"
+  },
+  "homepage": "https://github.com/CamilleGovehovitch/bacon-record-v4#readme",
+  "dependencies": {
+    "sass-watch": "^0.1.0"
+  }
+}
