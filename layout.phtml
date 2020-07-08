@@ -13,14 +13,46 @@
 </head>
 <body>
     <!--HEADER-->
+    <header class="header-mobile">
+        <navbar class="navbar-mobile">
+            <ul>
+                <li>Home</li>
+            </ul>
+        </navbar>
+        <div class="logo-container-mobile" id="logoContainerMobile" onclick="openHiddenMenuMobile()">
+            <a href="#">
+                <i class="fas fa-piggy-bank"></i>
+            </a>
+        </div>
+    </header>
+    <div class="hidden-menu-mobile" id="hiddenMenuMobile">
+        <ul>
+            <li class="hidden-sub-menu-mobile">
+                <a href="#">News</a>
+            </li>
+            <li class="hidden-sub-menu-mobile">
+                <a href="#">Catalogue</a>
+            </li>
+            <li class="hidden-sub-menu-mobile">
+                <a href="#">Média</a>
+            </li class="hidden-sub-menu-mobile">
+        </ul>
+    </div>
     <header class="header">
         <navbar class="navbar">
             <ul>
-                <li>Home</li>
-                <li class="sub-menu">News</li>
-                <li class="sub-menu">Catalogue</li>
-                <li class="sub-menu">News</li>
-                <li class="sub-menu">Média</li>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">News</a>
+                </li>
+                <li>
+                    <a href="#">Catalogue</a>
+                </li>
+                <li>
+                    <a href="#">Média</a>
+                </li>
             </ul>
         </navbar>
         <div class="logo-container">
@@ -29,5 +61,32 @@
             </a>
         </div>
     </header>
+    <!--MAIN-->
+    <main>
+
+    </main>
+    <!--FOOTER-->
+    <footer class="footer">
+        <div class="social-logo">
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fab fa-instagram-square"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <script src="scripts/navbarEffect.js"></script>
 </body>
 </html>

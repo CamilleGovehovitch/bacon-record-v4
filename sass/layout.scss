@@ -3,9 +3,10 @@
 *{
   box-sizing: border-box;
 }
-.header{
+//HEADER
+.header-mobile{
   background-color: black;
-  .navbar{
+  .navbar-mobile{
     ul{
       li{
         font-family: 'Lato', sans-serif;
@@ -14,33 +15,130 @@
     }
   }
 }
+.hidden-menu-mobile{
+  background-color: black;
+}
+.header{
+  background-color: black;
+  .navbar{
+    ul{
+      li{
+        font-family: 'Lato', sans-serif;
+        color: white;
+        a{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .logo-container{
+    a{
+      color: white;
+      text-decoration: none;
+      i{
+        color: white;
+      }
+    }
+  }
+}
+//FOOTER
+.footer{
+  background-color: white;
+  .social-logo{
+
+  }
+}
+//MOBILE
 @media screen and (min-width: 320px) and  (max-width: 599px) {
-  .header {
+  //HEADER
+  .header-mobile {
+    position: fixed;
+    width: 100vw;
     display: flex;
     justify-content: space-between;
     font-size: 20px;
     border-bottom: solid 1px white;
-    .navbar{
+    .navbar-mobile{
       padding: 12px 24px;
-      ul{
-        .sub-menu{
-          //display: none;
-        }
-      }
     }
-    .logo-container{
-      font-size:20px;
+    .logo-container-mobile{
       padding: 12px 24px;
       a{
         i{
+          font-size: 20px;
           color: white;
         }
       }
     }
   }
+  .hidden-menu-mobile{
+    height: 0;
+    overflow: hidden;
+    transition: height 400ms ease-in-out;
+    ul{
+      visibility: hidden;
+      .hidden-sub-menu-mobile{
+        margin-bottom: 20px;
+        a{
+          color: white;
+          text-decoration: none;
+          font-size: 20px
+        }
+      }
+    }
+  }
+  .hidden-menu-mobile-opened{
+    background-color: black;
+    height: 100vh;
+    padding: 12px 24px;
+    font-family: "Lato", sans-serif;
+    ul{
+      padding-top: 40px;
+      .hidden-sub-menu-mobile{
+        margin-bottom: 20px;
+        a{
+          color: white;
+          text-decoration: none;
+          font-size: 20px
+        }
+      }
+    }
+  }
+  .header {
+    display: none;
+  }
+  //FOOTER
+  .footer{
+    margin-top: 40px;
+    padding: 20px;
+    .social-logo{
+      ul{
+        display: flex;
+        justify-content: center;
+        li{
+          margin-right: 20px;
+          a{
+            color: black;
+            i{
+              font-size: 20px;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
 }
-
+//TABLET
 @media screen and (min-width: 600px) and  (max-width: 1024px) {
+  //MOBILE
+  .header-mobile{
+    display: none;
+  }
+  .hidden-menu-mobile{
+    display: none;
+  }
   .header {
     display: flex;
     justify-content: space-between;
@@ -49,8 +147,17 @@
       padding: 12px 24px;
       ul{
         display: flex;
+        height: 100%;
         li{
           margin-right: 10px;
+          height: 100%;
+          &:hover{
+            background-color: rgba(174, 173, 173, 1);
+          }
+          a{
+            color: white;
+            text-decoration: none;
+          }
         }
       }
     }
@@ -59,18 +166,98 @@
       padding: 12px 24px;
       a{
         i{
-          color: white;
+        }
+      }
+    }
+  }
+  //FOOTER
+  .footer{
+    padding: 20px;
+    .social-logo{
+      ul{
+        display: flex;
+        justify-content: center;
+        li{
+          margin-right: 10px;
+          a{
+            color: black;
+            i{
+              font-size: 30px;
+            }
+          }
         }
       }
     }
   }
 }
-
+//DESKTOP
 @media screen and (min-width: 1024px){
+  //HEADER
+  .header-mobile{
+    display: none;
+  }
+  .hidden-menu-mobile{
+    display: none;
+  }
   .header{
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     .navbar{
       ul{
+        height: 100%;
         display: flex;
+        li{
+          height: 100%;
+          padding: 12px 24px;
+          margin-right: 10px;
+          transition: background-color 400ms ease-in-out;
+          &:hover{
+            color: black;
+            background-color: rgba(174, 173, 173, 1);
+            a{
+              color: black;
+            }
+          }
+          a{
+            text-decoration: none;
+            color: white;
+          }
+        }
+      }
+    }
+    .logo-container{
+      padding: 12px 24px;
+      a{
+        text-decoration: none;
+        i{
+          font-size: 30px;
+        }
+      }
+    }
+  }
+//  FOOTER
+  .footer{
+    padding: 20px;
+    .social-logo{
+      ul{
+        display: flex;
+        justify-content: center;
+        li{
+          margin-right: 10px;
+          a{
+            color: black;
+            &:hover{
+              color: lightgrey;
+            }
+            i{
+              font-size: 30px;
+            }
+          }
+        }
       }
     }
   }

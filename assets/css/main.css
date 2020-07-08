@@ -3,6 +3,18 @@
   box-sizing: border-box;
 }
 
+.header-mobile {
+  background-color: black;
+}
+.header-mobile .navbar-mobile ul li {
+  font-family: "Lato", sans-serif;
+  color: white;
+}
+
+.hidden-menu-mobile {
+  background-color: black;
+}
+
 .header {
   background-color: black;
 }
@@ -10,26 +22,107 @@
   font-family: "Lato", sans-serif;
   color: white;
 }
+.header .navbar ul li a {
+  text-decoration: none;
+}
+.header .logo-container a {
+  color: white;
+  text-decoration: none;
+}
+.header .logo-container a i {
+  color: white;
+}
 
+.footer {
+  background-color: white;
+}
 @media screen and (min-width: 320px) and (max-width: 599px) {
-  .header {
+  .header-mobile {
+    position: fixed;
+    width: 100vw;
     display: flex;
     justify-content: space-between;
     font-size: 20px;
     border-bottom: solid 1px white;
   }
-  .header .navbar {
+  .header-mobile .navbar-mobile {
     padding: 12px 24px;
   }
-  .header .logo-container {
+  .header-mobile .logo-container-mobile {
+    padding: 12px 24px;
+  }
+  .header-mobile .logo-container-mobile a i {
     font-size: 20px;
-    padding: 12px 24px;
-  }
-  .header .logo-container a i {
     color: white;
+  }
+
+  .hidden-menu-mobile {
+    height: 0;
+    overflow: hidden;
+    transition: height 400ms ease-in-out;
+  }
+  .hidden-menu-mobile ul {
+    visibility: hidden;
+  }
+  .hidden-menu-mobile ul .hidden-sub-menu-mobile {
+    margin-bottom: 20px;
+  }
+  .hidden-menu-mobile ul .hidden-sub-menu-mobile a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+  }
+
+  .hidden-menu-mobile-opened {
+    background-color: black;
+    height: 100vh;
+    padding: 12px 24px;
+    font-family: "Lato", sans-serif;
+  }
+  .hidden-menu-mobile-opened ul {
+    padding-top: 40px;
+  }
+  .hidden-menu-mobile-opened ul .hidden-sub-menu-mobile {
+    margin-bottom: 20px;
+  }
+  .hidden-menu-mobile-opened ul .hidden-sub-menu-mobile a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+  }
+
+  .header {
+    display: none;
+  }
+
+  .footer {
+    margin-top: 40px;
+    padding: 20px;
+  }
+  .footer .social-logo ul {
+    display: flex;
+    justify-content: center;
+  }
+  .footer .social-logo ul li {
+    margin-right: 20px;
+  }
+  .footer .social-logo ul li a {
+    color: black;
+  }
+  .footer .social-logo ul li a i {
+    font-size: 20px;
+    text-align: center;
   }
 }
 @media screen and (min-width: 600px) and (max-width: 1024px) {
+  .header-mobile {
+    display: none;
+  }
+
+  .hidden-menu-mobile {
+    display: none;
+  }
+
   .header {
     display: flex;
     justify-content: space-between;
@@ -40,20 +133,105 @@
   }
   .header .navbar ul {
     display: flex;
+    height: 100%;
   }
   .header .navbar ul li {
     margin-right: 10px;
+    height: 100%;
+  }
+  .header .navbar ul li:hover {
+    background-color: #aeadad;
+  }
+  .header .navbar ul li a {
+    color: white;
+    text-decoration: none;
   }
   .header .logo-container {
     font-size: 20px;
     padding: 12px 24px;
   }
-  .header .logo-container a i {
-    color: white;
+  .footer {
+    padding: 20px;
+  }
+  .footer .social-logo ul {
+    display: flex;
+    justify-content: center;
+  }
+  .footer .social-logo ul li {
+    margin-right: 10px;
+  }
+  .footer .social-logo ul li a {
+    color: black;
+  }
+  .footer .social-logo ul li a i {
+    font-size: 30px;
   }
 }
 @media screen and (min-width: 1024px) {
-  .header .navbar ul {
+  .header-mobile {
+    display: none;
+  }
+
+  .hidden-menu-mobile {
+    display: none;
+  }
+
+  .header {
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header .navbar ul {
+    height: 100%;
+    display: flex;
+  }
+  .header .navbar ul li {
+    height: 100%;
+    padding: 12px 24px;
+    margin-right: 10px;
+    transition: background-color 400ms ease-in-out;
+  }
+  .header .navbar ul li:hover {
+    color: black;
+    background-color: #aeadad;
+  }
+  .header .navbar ul li:hover a {
+    color: black;
+  }
+  .header .navbar ul li a {
+    text-decoration: none;
+    color: white;
+  }
+  .header .logo-container {
+    padding: 12px 24px;
+  }
+  .header .logo-container a {
+    text-decoration: none;
+  }
+  .header .logo-container a i {
+    font-size: 30px;
+  }
+
+  .footer {
+    padding: 20px;
+  }
+  .footer .social-logo ul {
+    display: flex;
+    justify-content: center;
+  }
+  .footer .social-logo ul li {
+    margin-right: 10px;
+  }
+  .footer .social-logo ul li a {
+    color: black;
+  }
+  .footer .social-logo ul li a:hover {
+    color: lightgrey;
+  }
+  .footer .social-logo ul li a i {
+    font-size: 30px;
   }
 }
