@@ -3,6 +3,15 @@
   box-sizing: border-box;
 }
 
+.sticky {
+  width: 100vw;
+  top: 0;
+  position: fixed;
+  box-shadow: 2px 1px 72px 10px black;
+  z-index: 1;
+  transition: all 400ms ease-in-out;
+}
+
 .header-mobile {
   background-color: black;
 }
@@ -13,6 +22,9 @@
 
 .hidden-menu-mobile {
   background-color: black;
+}
+.hidden-menu-mobile ul .hidden-sub-menu-mobile a {
+  color: white;
 }
 
 .header {
@@ -40,24 +52,23 @@
   .header-mobile {
     position: fixed;
     width: 100vw;
-    display: flex;
-    justify-content: space-between;
+    padding: 24px 12px;
     font-size: 20px;
     border-bottom: solid 1px white;
+    z-index: 2;
   }
-  .header-mobile .navbar-mobile {
-    padding: 12px 24px;
+  .header-mobile .navbar-logo-container {
+    display: flex;
+    justify-content: space-between;
   }
-  .header-mobile .logo-container-mobile {
-    padding: 12px 24px;
-  }
-  .header-mobile .logo-container-mobile a i {
+  .header-mobile .logo-container-mobile i {
     font-size: 20px;
     color: white;
   }
 
   .hidden-menu-mobile {
     height: 0;
+    width: 100vw;
     overflow: hidden;
     transition: height 400ms ease-in-out;
   }
@@ -68,7 +79,6 @@
     margin-bottom: 20px;
   }
   .hidden-menu-mobile ul .hidden-sub-menu-mobile a {
-    color: white;
     text-decoration: none;
     font-size: 20px;
   }
@@ -76,11 +86,14 @@
   .hidden-menu-mobile-opened {
     background-color: black;
     height: 100vh;
-    padding: 12px 24px;
+    border-top: solid 1px white;
+    margin-top: 20px;
     font-family: "Lato", sans-serif;
+    z-index: 1;
+    transition: height 400ms ease-in-out;
   }
   .hidden-menu-mobile-opened ul {
-    padding-top: 40px;
+    padding-top: 20px;
   }
   .hidden-menu-mobile-opened ul .hidden-sub-menu-mobile {
     margin-bottom: 20px;
@@ -128,28 +141,63 @@
     justify-content: space-between;
     font-size: 20px;
   }
-  .header .navbar {
-    padding: 12px 24px;
-  }
-  .header .navbar ul {
+  .header .navbar .main-menu {
+    height: 100%;
     display: flex;
-    height: 100%;
   }
-  .header .navbar ul li {
+  .header .navbar .main-menu .main-menu-li {
+    height: 100%;
+    padding: 12px 24px;
     margin-right: 10px;
-    height: 100%;
+    transition: background-color 400ms ease-in-out;
   }
-  .header .navbar ul li:hover {
+  .header .navbar .main-menu .main-menu-li:hover {
+    color: black;
     background-color: #aeadad;
   }
-  .header .navbar ul li a {
-    color: white;
+  .header .navbar .main-menu .main-menu-li:hover a {
+    color: black;
+  }
+  .header .navbar .main-menu .main-menu-li a {
     text-decoration: none;
+    color: white;
+  }
+  .header .navbar .main-menu .catalogue-hover {
+    height: 100%;
+    padding: 12px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 400ms ease-in-out;
+  }
+  .header .navbar .main-menu .catalogue-hover:hover {
+    color: black;
+    background-color: #aeadad;
+  }
+  .header .navbar .main-menu .catalogue-hover:hover .sub-menu-navbar {
+    background-color: #aeadad;
+    display: block;
+    position: absolute;
+    margin-top: 33px;
+    margin-left: 65px;
+  }
+  .header .navbar .main-menu .catalogue-hover:hover .sub-menu-navbar li {
+    margin-bottom: 10px;
+  }
+  .header .navbar .main-menu .catalogue-hover:hover .sub-menu-navbar li a {
+    color: black;
+  }
+  .header .navbar .main-menu .catalogue-hover a {
+    color: white;
+  }
+  .header .navbar .main-menu .catalogue-hover .sub-menu-navbar {
+    display: none;
   }
   .header .logo-container {
     font-size: 20px;
     padding: 12px 24px;
   }
+
   .footer {
     padding: 20px;
   }
@@ -177,33 +225,74 @@
   }
 
   .header {
+    height: 50px;
     width: 100vw;
-    position: fixed;
-    bottom: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  .header .navbar ul {
+  .header .navbar .main-menu {
     height: 100%;
     display: flex;
   }
-  .header .navbar ul li {
+  .header .navbar .main-menu .main-menu-li {
     height: 100%;
     padding: 12px 24px;
     margin-right: 10px;
     transition: background-color 400ms ease-in-out;
   }
-  .header .navbar ul li:hover {
+  .header .navbar .main-menu .main-menu-li:hover {
     color: black;
     background-color: #aeadad;
   }
-  .header .navbar ul li:hover a {
+  .header .navbar .main-menu .main-menu-li:hover a {
     color: black;
   }
-  .header .navbar ul li a {
+  .header .navbar .main-menu .main-menu-li a {
     text-decoration: none;
     color: white;
+  }
+  .header .navbar .main-menu .catalogue-hover {
+    height: 100%;
+    padding: 12px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 400ms ease-in-out;
+  }
+  .header .navbar .main-menu .catalogue-hover:hover {
+    color: black;
+    background-color: #aeadad;
+  }
+  .header .navbar .main-menu .catalogue-hover:hover a {
+    color: black;
+  }
+  .header .navbar .main-menu .catalogue-hover:hover .sub-menu-navbar {
+    background-color: #aeadad;
+    display: block;
+    margin-top: 28px;
+    margin-left: 67px;
+    position: absolute;
+    transition: all 400ms ease-in-out;
+  }
+  .header .navbar .main-menu .catalogue-hover:hover .sub-menu-navbar li {
+    padding: 5px 10px;
+    margin: 5px;
+  }
+  .header .navbar .main-menu .catalogue-hover:hover .sub-menu-navbar li a {
+    padding: 5px;
+  }
+  .header .navbar .main-menu .catalogue-hover a {
+    color: white;
+    transition: all 400ms ease-in-out;
+  }
+  .header .navbar .main-menu .catalogue-hover a:hover:not(.catalogue) {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+  }
+  .header .navbar .main-menu .catalogue-hover .sub-menu-navbar {
+    display: none;
   }
   .header .logo-container {
     padding: 12px 24px;
@@ -213,6 +302,10 @@
   }
   .header .logo-container a i {
     font-size: 30px;
+    transition: color 400ms ease-in-out;
+  }
+  .header .logo-container a i:hover {
+    color: #aeadad;
   }
 
   .footer {
@@ -233,5 +326,387 @@
   }
   .footer .social-logo ul li a i {
     font-size: 30px;
+  }
+}
+.slide-parallax {
+  background-image: url("../../assets/img/bckg/imagebg.jpg");
+}
+
+.catalogue-band {
+  background-color: white;
+}
+.catalogue-band h1 {
+  font-family: "Lato", sans-serif;
+}
+.catalogue-band h3 {
+  font-family: "Rock Salt", cursive;
+}
+.catalogue-band .catalogue-content {
+  font-family: "Lato", sans-serif;
+}
+.catalogue-band .band-container-mobile .band-card-container .band-card .filter {
+  background-color: white;
+  border: solid 2px black;
+}
+.catalogue-band .band-container-mobile .band-card-container .band-card .filter .card-bottom .social-logo ul li a {
+  color: black;
+  text-decoration: none;
+}
+
+.news {
+  background-color: black;
+  padding: 12px 24px;
+}
+.news h1 {
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-size: 30px;
+}
+.news h3 {
+  color: white;
+  font-family: "Rock Salt", cursive;
+  font-size: 15px;
+}
+.news h3 i {
+  font-size: 15px;
+  color: white;
+}
+.news .news-container .news-card {
+  background-color: white;
+  height: 450px;
+  width: 300px;
+}
+.news .news-container .news-card .news-top {
+  height: 50%;
+  width: 100%;
+  padding: 12px 24px;
+}
+.news .news-container .news-card .news-top .img {
+  height: 100%;
+  width: 100%;
+  background-color: purple;
+}
+.news .news-container .news-card .news-bottom {
+  height: 50%;
+  width: 100%;
+}
+.news .news-container .news-card .news-bottom h4 {
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  color: black;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.news .news-container .news-card .news-bottom h5 {
+  font-family: "Rock Salt", cursive;
+  font-size: 10px;
+  color: black;
+  text-align: center;
+  margin-bottom: 10px;
+  opacity: 0.6;
+}
+.news .news-container .news-card .news-bottom p {
+  color: black;
+  text-align: center;
+}
+
+@media screen and (min-width: 320px) and (max-width: 599px) {
+  .slide-parallax {
+    height: 180px;
+    width: 360px;
+  }
+
+  .catalogue-band {
+    padding: 64px 12px;
+    padding-top: 0 !important;
+  }
+  .catalogue-band h1 {
+    margin: 10px 0;
+    font-size: 30px;
+    text-align: center;
+  }
+  .catalogue-band h3 {
+    text-align: center;
+    margin: 15px 0;
+    opacity: 0.6;
+  }
+  .catalogue-band .catalogue-content {
+    margin: 20px 0;
+  }
+  .catalogue-band .catalogue-content p {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  .catalogue-band .band-container-mobile .band-card-container .band-card {
+    height: 360px;
+    width: 260px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+  }
+  .catalogue-band .band-container-mobile .band-card-container .band-card .filter {
+    border-radius: 10px;
+  }
+  .catalogue-band .band-container-mobile .band-card-container .band-card .filter .card-top {
+    height: 180px;
+    border-radius: 10px 10px 0 0;
+  }
+  .catalogue-band .band-container-mobile .band-card-container .band-card .filter .card-center {
+    height: 150px;
+    width: 150px;
+    border-radius: 75px;
+    border: solid 7px white;
+    position: relative;
+    top: -75px;
+    left: 55px;
+  }
+  .catalogue-band .band-container-mobile .band-card-container .band-card .filter .card-bottom {
+    margin-top: -40px;
+  }
+  .catalogue-band .band-container-mobile .band-card-container .band-card .filter .card-bottom p {
+    text-align: center;
+    padding: 10px;
+  }
+  .catalogue-band .band-container-mobile .band-card-container .band-card .filter .card-bottom .social-logo ul {
+    display: flex;
+    justify-content: center;
+  }
+  .catalogue-band .band-container-mobile .band-card-container .band-card .filter .card-bottom .social-logo ul li {
+    margin-right: 10px;
+  }
+  .catalogue-band .band-container-mobile .band-card-container .band-card .filter .card-bottom .social-logo ul li a i {
+    font-size: 20px;
+  }
+
+  .news h1 {
+    text-align: center;
+    margin: 10px 0;
+  }
+  .news h3 {
+    text-align: center;
+    margin: 10px 0;
+    opacity: 0.6;
+  }
+  .news .news-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .news .news-container .news-card {
+    margin-bottom: 20px;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  .slide-parallax {
+    height: 50vh;
+    width: 100vw;
+    background-attachment: fixed;
+  }
+
+  .catalogue-band {
+    padding: 64px 12px;
+  }
+  .catalogue-band h1 {
+    margin: 10px 0;
+    font-size: 30px;
+    font-family: "Lato", sans-serif;
+    text-align: center;
+  }
+  .catalogue-band h3 {
+    text-align: center;
+    margin: 15px 0;
+    opacity: 0.6;
+  }
+  .catalogue-band .catalogue-content {
+    margin: 20px 0;
+  }
+  .catalogue-band .catalogue-content p {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  .catalogue-band .band-container-mobile {
+    display: flex;
+  }
+  .catalogue-band .band-container-mobile .band-card-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .catalogue-band .band-container-mobile .band-card-container .band-card {
+    height: 360px;
+    width: 260px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+  }
+  .catalogue-band .band-container-mobile .band-card-container .band-card .filter {
+    border-radius: 10px;
+    border: solid 2px black;
+  }
+  .catalogue-band .band-container-mobile .band-card-container .band-card .filter .card-top {
+    height: 180px;
+    border-radius: 10px 10px 0 0;
+  }
+  .catalogue-band .band-container-mobile .band-card-container .band-card .filter .card-center {
+    height: 150px;
+    width: 150px;
+    border-radius: 75px;
+    border: solid 7px white;
+    position: relative;
+    top: -75px;
+    left: 55px;
+  }
+  .catalogue-band .band-container-mobile .band-card-container .band-card .filter .card-bottom {
+    margin-top: -40px;
+  }
+  .catalogue-band .band-container-mobile .band-card-container .band-card .filter .card-bottom p {
+    text-align: center;
+    padding: 10px;
+  }
+  .catalogue-band .band-container-mobile .band-card-container .band-card .filter .card-bottom .social-logo ul {
+    display: flex;
+    justify-content: center;
+  }
+  .catalogue-band .band-container-mobile .band-card-container .band-card .filter .card-bottom .social-logo ul li {
+    margin-right: 10px;
+  }
+  .catalogue-band .band-container-mobile .band-card-container .band-card .filter .card-bottom .social-logo ul li a i {
+    font-size: 20px;
+  }
+
+  .news h1 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .news h3 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .news .news-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .news .news-container .news-card {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .slide-parallax {
+    height: 100vh;
+    width: 100vw;
+    background-attachment: fixed;
+  }
+
+  .catalogue-band {
+    width: 100vw;
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+  .catalogue-band h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+    padding-top: 20px;
+  }
+  .catalogue-band h3 {
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 10px;
+    opacity: 0.6;
+  }
+  .catalogue-band .catalogue-content {
+    margin-bottom: 15px;
+  }
+  .catalogue-band .catalogue-content p {
+    font-size: 15px;
+  }
+  .catalogue-band .band-container .band-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .catalogue-band .band-container .band-card-container .band-card {
+    margin-right: 50px;
+    margin-bottom: 30px;
+    transition: all 400ms ease-in-out;
+  }
+  .catalogue-band .band-container .band-card-container .band-card .filter {
+    height: 400px;
+    width: 300px;
+    background-color: black;
+    border-radius: 10px 10px 10px 10px;
+    transition: all 400ms ease-in-out;
+  }
+  .catalogue-band .band-container .band-card-container .band-card .filter .card-top {
+    height: 200px;
+    border-radius: 10px 10px 0 0;
+  }
+  .catalogue-band .band-container .band-card-container .band-card .filter .card-center {
+    height: 150px;
+    width: 150px;
+    border-radius: 75px;
+    position: relative;
+    top: -75px;
+    left: 70px;
+  }
+  .catalogue-band .band-container .band-card-container .band-card .filter .card-bottom {
+    margin-top: -40px;
+  }
+  .catalogue-band .band-container .band-card-container .band-card .filter .card-bottom p {
+    color: black;
+    text-align: center;
+    padding: 10px;
+  }
+  .catalogue-band .band-container .band-card-container .band-card .filter .card-bottom .social-logo ul {
+    display: flex;
+    justify-content: center;
+  }
+  .catalogue-band .band-container .band-card-container .band-card .filter .card-bottom .social-logo ul li {
+    margin-right: 10px;
+  }
+  .catalogue-band .band-container .band-card-container .band-card .filter .card-bottom .social-logo ul li a i {
+    color: black;
+    font-size: 20px;
+  }
+  .catalogue-band .band-container .band-card-container .band-card .filter .social-logo ul li a {
+    text-decoration: none;
+    color: black;
+  }
+  .catalogue-band .band-container .band-card-container .band-card:hover .filter .card-top {
+    height: 200px;
+    border-radius: 10px 10px 0 0;
+  }
+  .catalogue-band .band-container .band-card-container .band-card:hover .filter .card-center {
+    height: 150px;
+    width: 150px;
+    background-color: red;
+    border-radius: 75px;
+    border: solid 7px white;
+    position: relative;
+    top: -75px;
+    left: 70px;
+  }
+  .catalogue-band .band-container .band-card-container .band-card:hover .filter .card-bottom {
+    background-color: white;
+    margin-top: -40px;
+  }
+  .catalogue-band .band-container .band-card-container .band-card:hover .filter .card-bottom p {
+    color: black;
+    text-align: center;
+    padding: 10px;
+  }
+  .catalogue-band .band-container .band-card-container .band-card:hover .filter .card-bottom .social-logo {
+    background-color: white;
+  }
+  .catalogue-band .band-container .band-card-container .band-card:hover .filter .card-bottom .social-logo ul {
+    display: flex;
+    justify-content: center;
+  }
+  .catalogue-band .band-container .band-card-container .band-card:hover .filter .card-bottom .social-logo ul li {
+    margin-right: 10px;
+  }
+  .catalogue-band .band-container .band-card-container .band-card:hover .filter .card-bottom .social-logo ul li a i {
+    color: black;
+    font-size: 20px;
   }
 }

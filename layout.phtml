@@ -14,79 +14,76 @@
 <body>
     <!--HEADER-->
     <header class="header-mobile">
-        <navbar class="navbar-mobile">
-            <ul>
-                <li>Home</li>
-            </ul>
-        </navbar>
-        <div class="logo-container-mobile" id="logoContainerMobile" onclick="openHiddenMenuMobile()">
-            <a href="#">
-                <i class="fas fa-piggy-bank"></i>
-            </a>
+        <div class="navbar-logo-container">
+            <navbar class="navbar-mobile">
+                <ul>
+                    <li>Home</li>
+                </ul>
+            </navbar>
+            <div class="logo-container-mobile" id="logoContainerMobile" onclick="openHiddenMenuMobile()">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
-    </header>
-    <div class="hidden-menu-mobile" id="hiddenMenuMobile">
-        <ul>
-            <li class="hidden-sub-menu-mobile">
-                <a href="#">News</a>
-            </li>
-            <li class="hidden-sub-menu-mobile">
-                <a href="#">Catalogue</a>
-            </li>
-            <li class="hidden-sub-menu-mobile">
-                <a href="#">Média</a>
-            </li class="hidden-sub-menu-mobile">
-        </ul>
-    </div>
-    <header class="header">
-        <navbar class="navbar">
+        <div class="hidden-menu-mobile" id="hiddenMenuMobile">
             <ul>
-                <li>
-                    <a href="#">Home</a>
-                </li>
-                <li>
+                <li class="hidden-sub-menu-mobile">
                     <a href="#">News</a>
                 </li>
-                <li>
+                <li class="hidden-sub-menu-mobile">
                     <a href="#">Catalogue</a>
                 </li>
-                <li>
+                <li class="hidden-sub-menu-mobile">
                     <a href="#">Média</a>
+                </li class="hidden-sub-menu-mobile">
+            </ul>
+        </div>
+    </header>
+    <header class="header" id="header">
+        <navbar class="navbar" id="navbar">
+            <ul class="main-menu">
+                <li class="main-menu-li">
+                    <a href="#">Home</a>
+                </li>
+                <li class="main-menu-li">
+                    <a href="#">News</a>
+                </li>
+                <li class="main-menu-li">
+                    <a href="#">Média</a>
+                </li>
+                <li class="catalogue-hover">
+                    Catalogue
+                    <ul class="sub-menu-navbar">
+                        <li>
+                            <a href="#">I Am John Baudelaire</a>
+                        </li>
+                        <li>
+                            <a href="#">Tomoe</a>
+                        </li>
+                        <li>
+                            <a href="#">Your Day Will Come</a>
+                        </li>
+                        <li>
+                            <a href="#">No One Can Hear You Scream!</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </navbar>
         <div class="logo-container">
-            <a href="#">
+            <a href="">
                 <i class="fas fa-piggy-bank" id="logo"></i>
             </a>
         </div>
     </header>
     <!--MAIN-->
-    <main>
-
+    <main class="main-content">
+        <?php include $template.'.phtml' ?>
     </main>
     <!--FOOTER-->
     <footer class="footer">
-        <div class="social-logo">
-            <ul>
-                <li>
-                    <a href="#">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fab fa-instagram-square"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
+
     </footer>
     <script src="scripts/navbarEffect.js"></script>
+    <script src="scripts/parallaxEffect.js"></script>
 </body>
 </html>
